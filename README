@@ -1,0 +1,102 @@
+Model Viewer Readme
+
+Author: Craig Young
+Version: 0.96
+Date: December 18, 2007
+
+Updates: 
+	- Dec 18: Ground Plane added.
+				 Shadow maps added (texture size option in the edit menu)
+					- requires a card capable of pixel shader 2.0 b for shadows on the 
+					  normal maps (regular 2.0 for per pixel lighting).
+				 Parallax mapping is disabled. Going to revamp this feature.
+	- Nov 20: Added DirectX mesh support
+				 Added support for mirrored normal maps.
+				 New about dialog.
+	- Nov 15: Fixed a memory issue.
+				 Extended camera clipping plane.
+				 Switching lights now brings that light into the property panel.
+	- Nov 14: Multiple object loading implemented. Accessable through the File menu
+				 or right clicking on the list of the models and textures.
+				 Multiple light support added. Limited to 3 lights.
+	- Nov 4: Emissive textures implemented.
+				Screenshot ability added.
+				*Note: old setting files will not work.
+	- Oct 26: Texture refresh moved to the menu as a global variable instead of per texture.
+				 Save/Load settings implemented.
+				 Option to invert the controls.
+	- Sept 24: Fixed minimizing bugs. Added reference mode for non pixel shader 2 cards.
+				  Wireframe mode added. Lighting issue with normal mapping and parallax 
+				  mapping resolved.
+	- Sept 18: Parallax Mapping and specular shinyness support added. Fixed Per 
+				  pixel lighting
+				  **** Parallax Mapping requires a pixel shader 3 card ****
+	- Aug 25: Texture Auto updating added. Performance improved.
+	- Aug 23: Ambient Occlusion Map support added
+	- Aug 22: re-worked gui.
+
+	Parallax Data is obtained from the alpha channel of a normal map.
+	Specular strength data is obtained from the alpha of a specular map.
+
+Running Instructions:
+	To Load a Model:
+		1. Click next to the button located next to the empty path box or from the 
+			menu click on File->Load Model.
+		2. Browse to the directory of the model and select.
+		3. Click OK.
+	
+	To Load a Texture:
+		1. Click next to the button located next to the empty path box.
+				button: [...]
+		2. Browse to the directory of the image and select.
+		3. Click OK.
+		
+		Click on the checkbox below each texture's textbox, which displays the 
+		path of the texture to enable/disable the texture.
+		
+		Textures can be reset by ctrl+t or through the menu Edit->Reset Textures
+		
+	Camera Controls:
+		Rotate: Left click and drag the mouse in the right hand panel.
+		
+		Move: Middle click and drag in the right hand panel.
+				*Note: a little sensitive at times on smaller models.
+		
+		Zoom: Right click and drag up or down in the right hand panel to zoom in 
+				or zoom out.
+				
+		Resetting the camera can be done by ctrl+c or through the menu 
+		Edit->Reset Camera.
+
+	Light Control:
+		Rotate: Hold ctrl + left click and then drag the mouse in the right hand 
+				  panel.
+		
+		Switch Light: Hold ctrl & 1, 2 or 3 to switch between lights.
+						  *Note: You can only switch to a light if it is enabled.
+		
+		Resetting the light can be done by ctrl+v or through the menu 
+		Edit->Reset Light.
+	
+	Textures:
+		Resetting: Hold ctrl + b to remove all loaded textures. Also available 
+					  through Edit->Reset Textures.
+	
+Planned Additions:
+	- Shadows
+	- Sub Surface Scattering Texture support.
+
+Credits:
+	Big thanks to Noel Cower for assistance in debugging the shader code.
+	
+	Eric Lengyel for calculating tangents to resolve mirrored normal maps
+		(http://www.terathon.com/code/tangent.php)
+	
+	GameTutorials.com
+	Riemers.net
+	
+	Micheal Winder for his spaceship and textures.
+	Samuel Arshevon for his diablo model and textures.
+	Parallax wall is unknown author.
+	Parallax wall textures borrowed from directx sdk.
+	
